@@ -1,0 +1,48 @@
+import React from 'react';
+import '../assets/css/Footer.css';
+
+function Footer(){
+    return(
+        <div className="main-footer">
+            <div className="container">
+            <hr className="barra"></hr>
+                <div className="row">
+                    {/*Column1*/}
+                    <div className="col"> 
+                        <ui className = "list-unstyled1">
+                            <li>Contáctanos:</li>
+                            <li>@blacksalegt</li>
+                            <li><a href="https://www.facebook.com/blacksalegt/">Facebook</a></li>
+                            <li><a href="https://www.instagram.com/blacksalegt/">Instagram</a></li>
+                        </ui>                      
+                    </div>
+                    {/*Column2*/}
+                    <div className="col2"> 
+                        <ui className = "list-unstyled2">
+                            <li><a href="/inicio">Inicio</a></li>
+                            <li><a href="/Productos">Productos</a></li>
+                            <li><a href="/Promociones">Promociones</a></li>
+                            <li><a href="/NuevoIngreso">Nuevo Ingreso</a></li>
+                        </ui> 
+                    </div>
+                    {/*Column4*/}
+                    <div className="col"> 
+                        <ui className = "list-unstyled3">
+                            <li>HORARIO DE ATENCIÓN:</li>
+                            <li>Lunes a Viernes: 8:00 AM a 5:00 PM</li>
+                            <li>Sábado y Domingo: Cerrado</li>
+                        </ui>                      
+                    </div>
+                </div>
+                <hr className="barra"></hr>
+                <div className="row">
+                    <p className="col-sm">
+                        Black Sale &copy;{new Date().getFullYear()} All Rights Reserved
+                    </p>
+                </div>
+            </div>
+        </div>
+    )
+}
+
+export default Footer;
