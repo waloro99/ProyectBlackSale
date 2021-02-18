@@ -24,7 +24,7 @@ button:hover{
 
 /*Estilo de toda la barra navegadora del lado izquierdo MANTIENE UN ESTILO OCULTO ""*/
 .Navbar .leftSide{
-  flex: 60%;
+  flex: 80%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -39,14 +39,26 @@ button:hover{
 .Navbar .leftSide .links a{
   text-decoration: none;
   color: #06001B;
-  font-size: 25px;
-  margin-left: 15px;
+  font-size: 20px;
+  margin-left: 45px;
+}
+
+.Navbar .leftSide .links a:hover{
+  color: blue;
 }
 
 /*Estilo del boton que aparecera cuando la pantalla se reduzca mucho se encuentra invisible*/
 .Navbar .leftSide button{
   display: none;
   margin-left: 20px;
+  margin-right: 20px;
+  background-color: #06001B;
+  color: white;
+  border: none;
+}
+
+.Navbar .leftSide button:hover{
+  background-color: blue;
 }
 
 /*Estilo de toda la barra navegadora del lado izquierdo MANTIENE UN ESTILO OCULTO "hidden"*/
@@ -56,7 +68,7 @@ button:hover{
 
 /*Estilo de toda la barra navegadora del lado derecho*/
 .Navbar .rightSide{
-  flex: 40%;
+  flex: 20%;
   display: flex;
   align-items: center;
   justify-content: flex-end;
@@ -67,18 +79,32 @@ button:hover{
 .rightSide input{
   width: 220px;
   height: 30px;
-  border: none;
+  border: #06001B;
+  border-style: solid;
   border-radius: 4px;
-  font-size: 20px;
+  font-size: 15px;
   padding-left: 15px;
-  color: black;
+  color: #06001B;
+  margin-right: 5px;
+}
+
+.rightSide input:hover{
+  border-color: blue;
 }
 
 /*Estilo de el boton de busqueda que se encuentra en la barra navegadora*/
 .rightSide button{
   height: 32px;
-  width: 70px;
+  width: 20px;
   font-size: 16px;
+  background-color: white;
+  border: none;
+  color: #06001B;
+  margin-right: 60px;
+}
+
+.rightSide button :hover{
+  color: blue;
 }
 
 /*Dice que cuadno la pantalla de ancho se reduzca a 850px pase lo siguiente*/
