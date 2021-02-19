@@ -1,5 +1,7 @@
 import React from 'react';
 import '../assets/css/Footer.css';
+import face from '../assets/images/face.png';
+import insta from '../assets/images/insta.png';
 
 function Footer(){
     return(
@@ -12,14 +14,14 @@ function Footer(){
                         <ui className = "list-unstyled1">
                             <li>Contáctanos:</li>
                             <li>@blacksalegt</li>
-                            <li><a href="https://www.facebook.com/blacksalegt/">Facebook</a></li>
-                            <li><a href="https://www.instagram.com/blacksalegt/">Instagram</a></li>
+                            <li><a href="https://www.facebook.com/blacksalegt/"><img src={face}></img></a></li>
+                            <li><a href="https://www.instagram.com/blacksalegt/"><img src={insta}></img></a></li>
                         </ui>                      
                     </div>
                     {/*Column2*/}
                     <div className="col2"> 
                         <ui className = "list-unstyled2">
-                            <li><a href="/inicio">Inicio</a></li>
+                            <li><a href="/">Inicio</a></li>
                             <li><a href="/Productos">Productos</a></li>
                             <li><a href="/Promociones">Promociones</a></li>
                             <li><a href="/NuevoIngreso">Nuevo Ingreso</a></li>

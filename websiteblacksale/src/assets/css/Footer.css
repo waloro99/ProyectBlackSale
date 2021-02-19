@@ -25,3 +25,9 @@
 .row a:hover{
     color: blue;
 }
+
+/*Imagenes de facebook e instagram en el el footer*/
+img{
+    width: 10px;
+    height: 10px;
+}

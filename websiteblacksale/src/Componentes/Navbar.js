@@ -10,7 +10,7 @@ function Navbar(){
         <div className="Navbar">
             <div className="leftSide">
                 <div className="links" id={showLinks ? "hidden" : ""}> 
-                    <a href="/inicio">Inicio</a>
+                    <a href="/">Inicio</a>
                     <a href="/Productos">Productos</a>
                     <a href="/NuevoIngreso">Nuevo Ingreso</a>
                     <a href="/Promociones">Promociones</a>

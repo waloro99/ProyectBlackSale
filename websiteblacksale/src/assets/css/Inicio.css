@@ -1,0 +1,96 @@
+.main-inicio{
+    display: flex;
+    flex-direction: column;
+    min-height: 70vh;
+}
+
+.content-wrap{
+    display: flex;
+}
+
+.leftSite{
+    width: 49%;
+    margin-left: 10%;
+    margin-top: 1%;
+    align-items: center;
+    background-color: white;
+    min-height: 60vh;
+}
+
+.leftSite h3{
+    color: #06001B;
+    font-family: Lato;
+    font-size: 48px;
+    line-height: 55px;
+    width: 697px;
+    height: 70px;
+    text-align: left;
+    margin-top: 2px;
+}
+
+.leftSite p{
+    color: #06001B;
+    font-family: Lato;
+    font-size: 18px;
+    line-height: 28px;
+    width: 560px;
+    text-align: left;
+}
+
+.leftSite input{
+    background-color: #FFFFFF;
+    border: 1px solid #06001B;
+    border-radius: 5px;
+    width: 180px;
+    height: 35px;
+    font-family: Lato;
+    margin-right: 1%;
+    font-size: 18px;
+}
+
+.leftSite button{
+    background-color: #06001B;
+    border-radius: 5px;
+    width: 150px;
+    height: 35px;
+    color: white;
+    font-family: Lato;
+    margin-right: 20%;
+    font-size: 18px;
+}
+
+/*logo black sale*/
+.leftSite img{
+    width: 354px;
+    height: 181px;
+    line-height: 5px;
+    display: flex;
+}
+
+.rightSite{
+    width: 49%;
+    margin-right: 10%;
+    margin-top: 1%;
+    align-items: center;
+    background-color: white;
+    min-height: 60vh;
+}
+
+.rightSite .img1{
+    height: 250px;
+    width: 200px;
+}
+
+.rightSite .img2{
+    height: 180px;
+    width: 200px;
+}
+
+.rightSite .img3{
+    height: 180px;
+    width: 200px;
+}
+
+.rightSite .gemelosImg{
+    display: flex;
+}
