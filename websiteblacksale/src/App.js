@@ -7,6 +7,12 @@ import Contacto from './Componentes/Contacto';
 import Promociones from './Componentes/Promociones';
 import NuevoIngreso from './Componentes/NuevoIngreso';
 import Detalle from './Componentes/Detalle';
+import UsuarioMenu from './Componentes/UsuarioMenu';
+import ActualizarProducto from './Componentes/ActualizarProducto';
+import AgregarProducto from './Componentes/AgregarProducto';
+import ConfCuenta from './Componentes/ConfCuenta';
+import EliminarProducto from './Componentes/EliminarProducto';
+import ModificarProducto from './Componentes/ModificarProducto';
 import {
   BrowserRouter as Router,
   Switch,
@@ -20,6 +26,24 @@ function App() {
       <div className="App">
         <Navbar />
         <Switch>
+          <Route path="/agregarproducto" exact>
+            <AgregarProducto/>
+          </Route>
+          <Route path="/actualizarproducto" exact>
+            <ActualizarProducto/>
+          </Route>
+          <Route path="/modificarproducto" exact>
+            <ModificarProducto/>
+          </Route>
+          <Route path="/eliminarproducto" exact>
+            <EliminarProducto/>
+          </Route>
+          <Route path="/confcuenta" exact>
+            <ConfCuenta/>
+          </Route>
+          <Route path="/menu" exact>
+            <UsuarioMenu/>
+          </Route>
           <Route path="/productos" exact>
             <Productos/>
           </Route>

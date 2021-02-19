@@ -1,0 +1,205 @@
+.main-menu{
+    display: flex;
+    flex-direction: column;
+    min-height: 70vh;
+}
+
+.content-wrap{
+    display: flex;
+}
+
+.leftSiteU{
+    width: 29%;
+    margin-left: 10%;
+    align-items: center;
+    background-color: white;
+}
+
+.leftSiteU h2{
+    color: #06001B;
+    font-family: Lato;
+    font-size: 20px;
+    line-height: 20px;
+    text-align: center;
+    margin: 1%;
+    padding: 0%;
+}
+
+.leftSiteU .logoC img{
+    width: 350px;
+    height: 181px;
+    margin-left: 5%;
+    line-height: 1px;
+    display: flex;
+}
+
+.leftSiteU .logo2C img{
+    width: 230px;
+    height: 260px;
+    align-items: center;
+    margin-left: 22%;
+    margin-top: 3%;
+    display: flex;
+}
+
+
+.rightSiteC{
+    width: 69%;
+    margin-right: 10%;
+    margin-top: 1%;
+    align-items: center;
+    background-color: white;
+    min-height: 60vh;
+}
+
+.rightSiteC .header{
+    display: flex;
+}
+
+.rightSiteC .header h2{
+    margin-left: 35%;
+    color: #06001B;
+    font-family: Lato;
+    font-size: 28px;
+    line-height: 20px;
+    text-align: center;
+}
+
+.rightSiteC .header h3{
+    margin-left: 20%;
+    color: #06001B;
+    font-family: Lato;
+    font-size: 17px;
+    line-height: 20px;
+    text-align: center;
+}
+
+.rightSiteC .menuM{
+    display: flex;
+    flex-direction: column;
+    min-height: 58vh;
+    background-color: white;
+}
+
+.rightSiteC .menuM .cont-menu{
+    display: flex;
+    background-color: white;
+    width: 100%;
+    min-height: 58vh;
+}
+
+.rightSiteC .menuM .cont-menu .izquierdaM {
+    border: none;
+    width: 60%;
+}
+
+.rightSiteC .menuM .cont-menu .derechaM {
+    text-align: center;
+    width: 100%;
+}
+
+.rightSiteC .menuM .cont-menu .derechaM .arribaM{
+    text-align: center;
+    display: flex;
+    width: 100%;
+    height: 40%;
+}
+
+.rightSiteC .menuM .cont-menu .derechaM .abajoM{
+    text-align: center;
+    width: 100%;
+    height: 60%;
+}
+
+.agregar{
+    background-color: #016C00;
+    color: white;
+    font-family: Lato;
+    font-size: 20px;
+    border: none;
+    height: 59%;
+    width: 100%;
+    text-align: left;
+}
+
+.agregar h3{
+    font-family: Lato;
+    font-size: 20px;
+    text-align: left;
+    margin-top: 75%;
+}
+
+.modificar{
+    background-color: #343F4B;
+    color: white;
+    font-family: Lato;
+    border: none;
+    height: 41%;
+    font-size: 20px;
+    width: 100%;
+    text-align: left;
+}
+
+.modificar h3{
+    font-family: Lato;
+    font-size: 20px;
+    text-align: left;
+    margin-top: 38%;
+}
+
+.actualizar{
+    background-color: #D8DB17;
+    color: white;
+    font-family: Lato;
+    border: none;
+    height: 41%;
+    font-size: 20px;
+    width: 50%;
+    height: 100%;
+    text-align: left;
+}
+
+.actualizar h3{
+    font-family: Lato;
+    font-size: 20px;
+    text-align: left;
+    margin-top: 55%;
+}
+
+.eliminar{
+    background-color: #9D0003;
+    color: white;
+    font-family: Lato;
+    border: none;
+    height: 41%;
+    font-size: 20px;
+    width: 50%;
+    height: 100%;
+    text-align: left;
+}
+
+.eliminar h3{
+    font-family: Lato;
+    font-size: 20px;
+    text-align: left;
+    margin-top: 55%;
+}
+
+.configurar{
+    background-color: #DE8000;
+    color: white;
+    font-family: Lato;
+    border: none;
+    height: 41%;
+    font-size: 20px;
+    width: 100%;
+    height: 100%;
+    text-align: left;
+}
+
+.configurar h3{
+    font-family: Lato;
+    font-size: 20px;
+    text-align: left;
+    margin-top: 38%;
+}

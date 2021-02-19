@@ -57,7 +57,7 @@ function Inicio(){
                 <br/> <br/>
             </div>           
             <div align="center">
-                <Button color="primary">Iniciar Sesión</Button>
+                <Button color="primary" href="/menu">Iniciar Sesión</Button>
             </div>
             <div align="center">
                 <a href="/">¿Olvidaste tu contraseña?</a>
