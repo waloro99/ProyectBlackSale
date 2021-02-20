@@ -12,7 +12,7 @@ import ActualizarProducto from './Componentes/ActualizarProducto';
 import AgregarProducto from './Componentes/AgregarProducto';
 import ConfCuenta from './Componentes/ConfCuenta';
 import EliminarProducto from './Componentes/EliminarProducto';
-import ModificarProducto from './Componentes/ModificarProducto';
+import ModificarUsuario from './Componentes/ModificarUsuario';
 import {
   BrowserRouter as Router,
   Switch,
@@ -32,8 +32,8 @@ function App() {
           <Route path="/actualizarproducto" exact>
             <ActualizarProducto/>
           </Route>
-          <Route path="/modificarproducto" exact>
-            <ModificarProducto/>
+          <Route path="/modificarusuario" exact>
+            <ModificarUsuario/>
           </Route>
           <Route path="/eliminarproducto" exact>
             <EliminarProducto/>

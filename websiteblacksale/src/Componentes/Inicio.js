@@ -24,7 +24,9 @@ const useStyles=makeStyles((theme)=>({
         align:'center'
     },
     button:{
-        textAlign:'center'
+        textAlign:'center',
+        backgroundColor: '#06001B',
+        color: 'white'
     }
 }))
 

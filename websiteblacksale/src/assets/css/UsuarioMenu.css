@@ -88,6 +88,10 @@
     min-height: 58vh;
 }
 
+.rightSiteC .menuM .cont-menu button:hover{
+    background-color: #06001B;
+}
+
 .rightSiteC .menuM .cont-menu .izquierdaM {
     border: none;
     width: 60%;
@@ -103,6 +107,10 @@
     display: flex;
     width: 100%;
     height: 40%;
+}
+
+.rightSiteC .menuM .cont-menu .derechaM .arribaM a{
+    width: 100%;
 }
 
 .rightSiteC .menuM .cont-menu .derechaM .abajoM{
@@ -154,7 +162,7 @@
     border: none;
     height: 41%;
     font-size: 20px;
-    width: 50%;
+    width: 100%;
     height: 100%;
     text-align: left;
 }
@@ -173,7 +181,7 @@
     border: none;
     height: 41%;
     font-size: 20px;
-    width: 50%;
+    width: 100%;
     height: 100%;
     text-align: left;
 }

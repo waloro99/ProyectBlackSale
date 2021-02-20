@@ -25,16 +25,16 @@ function UsuarioMenu(){
                     <div className="menuM">
                         <div className="cont-menu">
                             <div className="izquierdaM">
-                                <button className="agregar" href="/agregarproducto"><h3>&nbsp;&nbsp;&nbsp;&nbsp; Agregar Producto</h3></button>
-                                <button className="modificar" href="/modificarproducto"><h3> &nbsp;&nbsp;&nbsp;&nbsp; Modificar Producto</h3></button>
+                            <a href="/agregarproducto"><button className="agregar"><h3>&nbsp;&nbsp;&nbsp;&nbsp; Agregar Producto</h3></button></a>
+                            <a href="/modificarusuario"><button className="modificar"><h3>&nbsp;&nbsp;&nbsp;&nbsp; Modificar Usuario</h3></button></a>
                             </div>
                             <div className="derechaM">
                                 <div className="arribaM">
-                                    <button className="actualizar" href="/actualizarproducto"><h3>&nbsp;&nbsp; Actualizar Producto</h3></button>
-                                    <button className="eliminar" href="/eliminarproducto"><h3>&nbsp;&nbsp; Eliminar Producto</h3></button>
+                                <a href="/actualizarproducto"><button className="actualizar"><h3>&nbsp;&nbsp; Actualizar Producto</h3></button></a>
+                                <a href="/eliminarproducto"><button className="eliminar"><h3>&nbsp;&nbsp; Eliminar Producto</h3></button></a>
                                 </div>
                                 <div className="abajoM">
-                                    <button className="configurar" href="/confcuenta"><h3>&nbsp;&nbsp;&nbsp;&nbsp; Configuración de Cuenta</h3></button>
+                                <a href="/confcuenta"><button className="configurar"><h3>&nbsp;&nbsp;&nbsp;&nbsp; Configuración de Cuenta</h3></button></a>
                                 </div>
                             </div>
                         </div>                        

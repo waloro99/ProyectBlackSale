@@ -1,0 +1,76 @@
+.main-contacto{
+    display: flex;
+    flex-direction: column;
+    min-height: 70vh;
+}
+
+.content-wrap{
+    display: flex;
+}
+
+.leftSiteAP{
+    width: 29%;
+    margin-left: 10%;
+    align-items: center;
+    background-color: white;  
+}
+
+.leftSiteAP h2{
+    color: #06001B;
+    font-family: Lato;
+    font-size: 15px;
+    line-height: 20px;
+    text-align: center;
+    margin: 1%;
+    margin-left: 40px;
+    padding: 0%;
+}
+
+.leftSiteAP .logoC img{
+    width: 350px;
+    height: 181px;
+    margin-left: 5%;
+    line-height: 1px;
+    display: flex;
+}
+
+.leftSiteAP .logo2C img{
+    width: 230px;
+    height: 260px;
+    align-items: center;
+    margin-left: 22%;
+    margin-top: 3%;
+    display: flex;
+}
+
+
+.rightSiteAP{
+    width: 69%;
+    margin-right: 10%;
+    margin-top: 1%;
+    align-items: center;
+    background-color: green;
+    min-height: 60vh;
+}
+
+.rightSiteAP .header{
+    display: flex;
+}
+
+.rightSiteAP .header h2{
+    margin-left: 35%;
+    color: #06001B;
+    font-family: Lato;
+    font-size: 28px;
+    line-height: 20px;
+    text-align: center;
+}
+
+.rightSiteAP .header h3{
+    margin-left: 10%;
+    color: #06001B;
+    font-family: Lato;
+    font-size: 17px;
+    line-height: 20px;
+    text-align: center;
+}
