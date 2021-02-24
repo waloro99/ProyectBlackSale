@@ -12,19 +12,31 @@ function Footer(){
                     {/*Column1*/}
                     <div className="col"> 
                         <ui className = "list-unstyled1">
-                            <li>Contáctanos:</li>
-                            <li>@blacksalegt</li>
-                            <li><a href="https://www.facebook.com/blacksalegt/"><img src={face}></img></a></li>
-                            <li><a href="https://www.instagram.com/blacksalegt/"><img src={insta}></img></a></li>
+                            <div className = "leftCol" >
+                                <li>Contáctanos:</li>
+                            </div>
+                            <div className="rightCol">
+                                <div className="arribaCol">
+                                    <li><a href="https://www.facebook.com/blacksalegt/"><img src={face}></img></a></li>
+                                    <li><a href="https://www.instagram.com/blacksalegt/"><img src={insta}></img></a></li>
+                                </div>
+                                <div className="abajoCol">
+                                    <li>@blacksalegt</li>
+                                </div>
+                            </div>
                         </ui>                      
                     </div>
                     {/*Column2*/}
                     <div className="col2"> 
                         <ui className = "list-unstyled2">
-                            <li><a href="/">Inicio</a></li>
-                            <li><a href="/Productos">Productos</a></li>
-                            <li><a href="/Promociones">Promociones</a></li>
-                            <li><a href="/NuevoIngreso">Nuevo Ingreso</a></li>
+                            <div className="leftCol2">
+                                <li><a href="/">Inicio</a></li>
+                                <li><a href="/Productos">Productos</a></li>
+                            </div>
+                            <div className="rightCol2">
+                                <li><a href="/Promociones">Promociones</a></li>
+                                <li><a href="/NuevoIngreso">Nuevo Ingreso</a></li>
+                            </div>
                         </ui> 
                     </div>
                     {/*Column4*/}

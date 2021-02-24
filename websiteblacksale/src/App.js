@@ -13,6 +13,8 @@ import AgregarProducto from './Componentes/AgregarProducto';
 import ConfCuenta from './Componentes/ConfCuenta';
 import EliminarProducto from './Componentes/EliminarProducto';
 import ModificarUsuario from './Componentes/ModificarUsuario';
+import RecuperarCuenta from './Componentes/RecuperarCuenta';
+
 import {
   BrowserRouter as Router,
   Switch,
@@ -26,6 +28,9 @@ function App() {
       <div className="App">
         <Navbar />
         <Switch>
+          <Route path="/recuperar" exact>
+            <RecuperarCuenta/>
+          </Route>
           <Route path="/agregarproducto" exact>
             <AgregarProducto/>
           </Route>

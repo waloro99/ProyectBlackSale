@@ -21,7 +21,10 @@ function AgregarProducto(){
                     <div className="header">
                         <h2>Completa el formulario:</h2>
                         <h3>Cuenta: admin</h3>
-                    </div>           
+                    </div> 
+                    <div className="bodyRightSite">
+                        
+                    </div>          
                 </div>
             </div>
         </div>

@@ -62,7 +62,7 @@ function Inicio(){
                 <Button color="primary" href="/menu">Iniciar Sesión</Button>
             </div>
             <div align="center">
-                <a href="/">¿Olvidaste tu contraseña?</a>
+                <a href="/recuperar">¿Olvidaste tu contraseña?</a>
             </div>
         </div>
     )

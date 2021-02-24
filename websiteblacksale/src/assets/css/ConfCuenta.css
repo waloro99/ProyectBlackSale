@@ -1,0 +1,220 @@
+.main-cuenta{
+    display: flex;
+    flex-direction: column;
+    min-height: 70vh;
+}
+
+.content-wrap{
+    display: flex;
+}
+
+.leftSiteCC{
+    width: 29%;
+    margin-left: 10%;
+    align-items: center;
+    background-color: white;  
+}
+
+.leftSiteCC h2{
+    color: #06001B;
+    font-family: Lato;
+    font-size: 15px;
+    line-height: 20px;
+    text-align: center;
+    margin: 1%;
+    margin-left: 40px;
+    padding: 0%;
+}
+
+.leftSiteCC .logoC img{
+    width: 350px;
+    height: 181px;
+    margin-left: 5%;
+    line-height: 1px;
+    display: flex;
+}
+
+.leftSiteCC .logo2C img{
+    width: 230px;
+    height: 260px;
+    align-items: center;
+    margin-left: 22%;
+    margin-top: 3%;
+    display: flex;
+}
+
+
+.rightSiteCC{
+    width: 69%;
+    margin-right: 10%;
+    margin-top: 1%;
+    align-items: center;
+    background-color: white;
+    min-height: 60vh;
+}
+
+.rightSiteCC .header{
+    display: flex;
+}
+
+.rightSiteCC .header h2{
+    margin-left: 35%;
+    color: #06001B;
+    font-family: Lato;
+    font-size: 28px;
+    line-height: 20px;
+    text-align: center;
+}
+
+.rightSiteCC .header h3{
+    margin-left: 10%;
+    color: #06001B;
+    font-family: Lato;
+    font-size: 17px;
+    line-height: 20px;
+    text-align: center;
+}
+
+.rightSiteCC .bodyRightSiteCC{
+    display: flex;
+}
+
+.rightSiteCC .bodyRightSiteCC .bodyL{
+    width: 65%;
+    margin-left: 20%;
+}
+
+.rightSiteCC .bodyRightSiteCC .bodyL .form1{
+    background-color: white;
+    display: flex;
+    align-items: center;
+}
+
+.rightSiteCC .bodyRightSiteCC .bodyL .form1 h3{
+    color: #06001B;
+    font-family: Lato;
+    font-size: 20px;
+    margin-left: 10%;
+    text-align: right;
+}
+
+.rightSiteCC .bodyRightSiteCC .bodyL .form1 input{
+    margin-left: 25%;
+    background-color: #FFFFFF;
+    border: 2px solid #06001B;
+    color: #06001B;
+    font-family: Lato;
+    border-radius: 5px;
+    font-size: 15px;
+}
+
+.rightSiteCC .bodyRightSiteCC .bodyL .form2{
+    background-color: white;
+    display: flex;
+    align-items: center;
+}
+
+.rightSiteCC .bodyRightSiteCC .bodyL .form2 h3{
+    color: #06001B;
+    font-family: Lato;
+    font-size: 20px;
+    margin-left: 10%;
+    text-align: right;
+}
+
+.rightSiteCC .bodyRightSiteCC .bodyL .form2 input{
+    margin-left: 24%;
+    background-color: #FFFFFF;
+    border: 2px solid #06001B;
+    color: #06001B;
+    font-family: Lato;
+    border-radius: 5px;
+    font-size: 15px;
+}
+
+.rightSiteCC .bodyRightSiteCC .bodyL .form3{
+    background-color: white;
+    display: flex;
+    align-items: center;
+}
+
+.rightSiteCC .bodyRightSiteCC .bodyL .form3 h3{
+    color: #06001B;
+    font-family: Lato;
+    font-size: 20px;
+    margin-left: 10%;
+    text-align: right;
+}
+
+.rightSiteCC .bodyRightSiteCC .bodyL .form3 input{
+    margin-left: 8%;
+    background-color: #FFFFFF;
+    border: 2px solid #06001B;
+    color: #06001B;
+    font-family: Lato;
+    border-radius: 5px;
+    font-size: 15px;
+}
+
+.rightSiteCC .bodyRightSiteCC .bodyL .form4{
+    background-color: white;
+    display: flex;
+    align-items: center;
+}
+
+.rightSiteCC .bodyRightSiteCC .bodyL .form4 h3{
+    color: #06001B;
+    font-family: Lato;
+    font-size: 20px;
+    margin-left: 10%;
+    text-align: right;
+}
+
+.rightSiteCC .bodyRightSiteCC .bodyL .form4 input{
+    margin-left: 20%;
+    background-color: #FFFFFF;
+    border: 2px solid #06001B;
+    color: #06001B;
+    font-family: Lato;
+    border-radius: 5px;
+    font-size: 15px;
+}
+
+.rightSiteCC .bodyRightSiteCC .bodyL .form5{
+    background-color: white;
+    display: flex;
+    align-items: center;
+}
+
+.rightSiteCC .bodyRightSiteCC .bodyL .form5 h3{
+    color: #06001B;
+    font-family: Lato;
+    font-size: 20px;
+    margin-left: 10%;
+    text-align: right;
+}
+
+.rightSiteCC .bodyRightSiteCC .bodyL .form5 input{
+    margin-left: 34%;
+    background-color: #FFFFFF;
+    border: 2px solid #06001B;
+    color: #06001B;
+    font-family: Lato;
+    border-radius: 5px;
+    font-size: 15px;
+}
+
+.rightSiteCC .bodyRightSiteCC .bodyL button{
+    background-color: #06001B;
+    border-radius: 5px;
+    width: 150px;
+    height: 40px;
+    color: #FFFFFF;
+    font-family: Lato;
+    font-size: 18px;
+    margin-left: 45%;
+}
+
+.rightSiteCC .bodyRightSiteCC .bodyL button:hover{
+    background-color: blue;
+}
