@@ -26,7 +26,15 @@ const useStyles=makeStyles((theme)=>({
     button:{
         textAlign:'center',
         backgroundColor: '#06001B',
-        color: 'white'
+        color: 'white',
+        fontSize: '12px'
+    },
+    olvidar:{
+        fontFamily:'Lato',
+        padding:'10px',
+        fontSize:'13px',
+        textDecoration: 'none',
+        color:'#06001B'
     }
 }))
 
@@ -59,9 +67,9 @@ function Inicio(){
                 <br/> <br/>
             </div>           
             <div align="center">
-                <Button color="primary" href="/menu">Iniciar Sesión</Button>
+                <Button color="primary" href="/menu" className={styles.button}>Iniciar Sesión</Button>
             </div>
-            <div align="center">
+            <div align="center" className={styles.olvidar}>
                 <a href="/recuperar">¿Olvidaste tu contraseña?</a>
             </div>
         </div>
