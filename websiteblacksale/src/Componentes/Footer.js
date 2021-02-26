@@ -34,8 +34,8 @@ function Footer(){
                                 <li><a href="/Productos">Productos</a></li>
                             </div>
                             <div className="rightCol2">
-                                <li><a href="/Promociones">Promociones</a></li>
-                                <li><a href="/NuevoIngreso">Nuevo Ingreso</a></li>
+                                <li><a href="/Productos">Promociones</a></li>
+                                <li><a href="/Productos">Nuevo Ingreso</a></li>
                             </div>
                         </ui> 
                     </div>

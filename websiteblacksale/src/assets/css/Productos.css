@@ -34,6 +34,20 @@
     display: flex;
 }
 
+.leftSiteP .list{
+    align-items: center;
+    margin-top: 20%;
+    margin-left: 10%;
+}
+
+.leftSiteP .list input{
+    width: 70%;
+    border-radius: 5px;
+    color: #06001B;
+    font-family: Lato;
+    font-size: 20px;
+}
+
 .rightSiteP{
     width: 69%;
     margin-right: 10%;
@@ -43,24 +57,31 @@
     min-height: 60vh;
 }
 
-.rightSiteP .header{
-    display: flex;
+.rightSiteP .Header{
+    align-items: center;
 }
 
-.rightSiteP .header h2{
-    margin-left: 35%;
-    color: #06001B;
+.rightSiteP .Header input{
+    margin: 5%;
+    width: 40%;
     font-family: Lato;
-    font-size: 28px;
-    line-height: 20px;
-    text-align: center;
+    color: #06001B;
+    font-size: 20px;
+    border-style: solid;
+    border-color: #06001B;
+    border-radius: 5px;
 }
 
-.rightSiteP .header h3{
-    margin-left: 10%;
+.rightSiteP .Header input:hover{
+    border-color: blue;
+}
+
+.rightSiteP .Header button{
     color: #06001B;
-    font-family: Lato;
-    font-size: 17px;
-    line-height: 20px;
-    text-align: center;
+    background-color: white;
+    border: none;
+}
+
+.rightSiteP .Header button:hover{
+    color: blue;
 }

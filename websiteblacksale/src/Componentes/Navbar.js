@@ -12,8 +12,8 @@ function Navbar(){
                 <div className="links" id={showLinks ? "hidden" : ""}> 
                     <a href="/">Inicio</a>
                     <a href="/Productos">Productos</a>
-                    <a href="/NuevoIngreso">Nuevo Ingreso</a>
-                    <a href="/Promociones">Promociones</a>
+                    <a href="/Productos">Nuevo Ingreso</a>
+                    <a href="/Productos">Promociones</a>
                     <a href="/Contacto">Contacto</a>
                 </div>
                 <button onClick={() => setShowLinks(!showLinks)}>
@@ -22,9 +22,9 @@ function Navbar(){
             </div>
             <div className="rightSide">
                 <input type="text" placeholder="Producto que desea..."></input>
-                <button>
+                <a href="/Productos"><button>
                     <SearchIcon/>
-                </button>
+                </button></a>
             </div>
         </div>
     )
