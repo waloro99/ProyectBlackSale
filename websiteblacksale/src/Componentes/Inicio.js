@@ -27,7 +27,8 @@ const useStyles=makeStyles((theme)=>({
         textAlign:'center',
         backgroundColor: '#06001B',
         color: 'white',
-        fontSize: '12px'
+        fontSize: '12px',
+        fontFamily: 'Lato'
     },
     olvidar:{
         fontFamily:'Lato',
@@ -61,9 +62,9 @@ function Inicio(){
                 </p>
             </div>
             <div align="center">
-                <TextField label="Correo electrónico" className={styles.textField}/>
+                <TextField label="Correo electrónico" type="email" className={styles.textField}/>
                 <br/>
-                <TextField label="Contraseña" className={styles.textField}/>
+                <TextField label="Contraseña" type="password"  className={styles.textField}/>
                 <br/> <br/>
             </div>           
             <div align="center">

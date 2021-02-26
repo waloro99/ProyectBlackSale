@@ -118,9 +118,9 @@ function ModificarUsuario(){
                     </div> 
                     <div className="bodyRightSite">
                         <div className="Products">
+                            <div className="AgregarProducto">
+                            <button className="btn btn-success" onClick={()=>abrirModalInsertar()}>Agregar Usuario <AddIcon/></button></div>
                             <br/>
-                            <button className="btn btn-success" onClick={()=>abrirModalInsertar()}>Agregar Usuario <AddIcon/></button>
-                            <br/><br/>
                             <table className="table table-responsive">
                                 <thead>
                                     <tr>
@@ -144,8 +144,10 @@ function ModificarUsuario(){
                                             <td>{elemento.enabled}</td>
                                             <td>{elemento.Permissions}</td>
                                             <td>
+                                            <div className="OpcionesBtn">
                                                 <button className="btn btn-primary" onClick={()=>chooseProduct(elemento, 'Edit')}><i className='far fa-edit'/><EditIcon/></button> {"   "}
                                                 <button className="btn btn-danger" onClick={()=>chooseProduct(elemento, 'Delete')}><i className='far fa-trash-alt'/><DeleteIcon/></button>
+                                            </div>
                                             </td>
                                         </tr>
                                         ))
@@ -241,7 +243,6 @@ function ModificarUsuario(){
                                                 <option value="Agregar/Editar"></option>
                                                 <option value="Agregar/Editar/Eliminar"></option>
                                         </datalist>
-                                        <br />
                                     </div>
                                 </ModalBody>
                                 <ModalFooter>
@@ -359,7 +360,6 @@ function ModificarUsuario(){
                                                 <option value="Agregar/Editar"></option>
                                                 <option value="Agregar/Editar/Eliminar"></option>
                                             </datalist>
-                                        <br />
                                     </div>
                                 </ModalBody>
                                 <ModalFooter>

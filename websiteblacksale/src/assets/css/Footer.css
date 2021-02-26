@@ -1,16 +1,19 @@
 .main-footer{
     color: white;
     background-color: #06001B;
-    padding-top: 15px;
+    padding-top: 5px;
     position: relative;
     bottom: 0;
     width: 100%;
     list-style: none;
 }
 
+
 .barra{
-    width: 90%;
+    width: 100%;
     position: center;
+    align-items: center;
+    background-color: white;
 }
 
 .row {
@@ -24,6 +27,7 @@
 
 .row a:hover{
     color: blue;
+    text-decoration: none;
 }
 
 /*Imagenes de facebook e instagram en el el footer*/
@@ -73,6 +77,7 @@ img{
 .main-footer .row .col2 .list-unstyled2 {
     display: flex;
     margin: 10px;
+    width: 180%;
 }
 
 .main-footer .row .col2 .list-unstyled2 .leftCol2{
@@ -88,5 +93,6 @@ img{
 
 .list-unstyled3 li{
     text-align: left;
-    margin-left: 55px;
+    margin-left: 45%;
+    width: 70%;
 }

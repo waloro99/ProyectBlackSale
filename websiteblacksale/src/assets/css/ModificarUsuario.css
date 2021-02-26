@@ -49,12 +49,13 @@
     margin-right: 10%;
     margin-top: 1%;
     align-items: center;
-    background-color: yellow;
+    background-color: white;
     min-height: 60vh;
 }
 
 .rightSiteMU .header{
     display: flex;
+    margin: 1%;
 }
 
 .rightSiteMU .header h2{
@@ -73,6 +74,29 @@
     font-size: 17px;
     line-height: 20px;
     text-align: center;
+}
+
+
+.rightSiteMU .bodyRightSite .Products button:hover{
+    background-color: #06001B;
+}
+
+.rightSiteMU .bodyRightSite .Products .AgregarProducto button{
+    font-family: Lato;
+    font-size: 15px;
+}
+
+.rightSiteMU .bodyRightSite .Products th{
+    font-family: Lato;
+}
+
+.rightSiteMU .bodyRightSite .Products td{
+    font-family: Lato;
+}
+
+.rightSiteMU .bodyRightSite .Products .OpcionesBtn button{
+    display: flex;
+    margin-top: 5%;
 }
 
 

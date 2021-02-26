@@ -49,16 +49,17 @@
     margin-right: 10%;
     margin-top: 1%;
     align-items: center;
-    background-color: yellow;
+    background-color: white;
     min-height: 60vh;
 }
 
 .rightSiteAP .header{
     display: flex;
+    padding: 1%;
 }
 
 .rightSiteAP .header h2{
-    margin-left: 35%;
+    margin-left: 40%;
     color: #06001B;
     font-family: Lato;
     font-size: 28px;
@@ -67,12 +68,34 @@
 }
 
 .rightSiteAP .header h3{
-    margin-left: 10%;
+    margin-left: 28%;
     color: #06001B;
     font-family: Lato;
     font-size: 17px;
     line-height: 20px;
     text-align: center;
+}
+
+.rightSiteAP .bodyRightSite .Products button:hover{
+    background-color: #06001B;
+}
+
+.rightSiteAP .bodyRightSite .Products .AgregarProducto button{
+    font-family: Lato;
+    font-size: 15px;
+}
+
+.rightSiteAP .bodyRightSite .Products th{
+    font-family: Lato;
+}
+
+.rightSiteAP .bodyRightSite .Products td{
+    font-family: Lato;
+}
+
+.rightSiteAP .bodyRightSite .Products .OpcionesBtn button{
+    display: flex;
+    margin-top: 5%;
 }
 
 

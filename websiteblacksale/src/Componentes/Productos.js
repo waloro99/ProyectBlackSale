@@ -2,6 +2,7 @@ import React from 'react';
 import '../assets/css/Productos.css';
 import logo from '../assets/images/logo horizontal.png';
 import MayorQue from '@material-ui/icons/ArrowForwardIos';
+import SearchIcon from '@material-ui/icons/Search';
 
 function Productos(){
     return(
@@ -16,7 +17,12 @@ function Productos(){
                 </div>                   
             </div>
             <div className="rightSiteP">       
-                <h2>hola</h2>
+                <div className="Header">
+                    <input type="text" placeholder="Producto que desea..."></input>
+                    <button>
+                        <SearchIcon/>
+                    </button>
+                </div>
             </div>
         </div>
     </div>

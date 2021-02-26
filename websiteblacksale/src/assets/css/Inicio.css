@@ -20,12 +20,12 @@
 .leftSite h3{
     color: #06001B;
     font-family: Lato;
-    font-size: 48px;
-    line-height: 55px;
-    width: 697px;
+    font-size: 45px;
+    line-height: 45px;
+    width: 600px;
     height: 70px;
     text-align: left;
-    margin-top: 2px;
+    margin-top: 1%;
 }
 
 .leftSite p{
@@ -35,13 +35,14 @@
     line-height: 28px;
     width: 560px;
     text-align: left;
+    margin-top: 5%;
 }
 
 .leftSite input{
     background-color: #FFFFFF;
     border: 1px solid #06001B;
     border-radius: 5px;
-    width: 180px;
+    width: 150px;
     height: 35px;
     font-family: Lato;
     margin-right: 1%;
@@ -51,12 +52,12 @@
 .leftSite button{
     background-color: #06001B;
     border-radius: 5px;
-    width: 150px;
+    width: 140px;
     height: 35px;
     color: white;
     font-family: Lato;
     margin-right: 20%;
-    font-size: 18px;
+    font-size: 15px;
 }
 
 /*logo black sale*/

@@ -108,7 +108,7 @@ function AgregarProducto(){
                     <div className="logoC">
                         <img src={logo}></img>
                     </div>                    
-                    <h2>Inicio <MayorQue/> Usuario <MayorQue/> Agregar/Editar/Eliminar Producto</h2>
+                    <h2>Inicio <MayorQue/> Usuario <MayorQue/> Agregar Producto</h2>
                     <div className="logo2C">
                         <img src={logo2}></img>
                     </div>                   
@@ -120,9 +120,9 @@ function AgregarProducto(){
                     </div> 
                     <div className="bodyRightSite">
                         <div className="Products">
+                            <div className="AgregarProducto">
+                            <button className="btn btn-success" onClick={()=>abrirModalInsertar()}>Agregar Producto <AddIcon/></button></div>
                             <br/>
-                            <button className="btn btn-success" onClick={()=>abrirModalInsertar()}>Agregar Producto <AddIcon/></button>
-                            <br/><br/>
                             <table className="table table-responsive">
                                 <thead>
                                     <tr>
@@ -144,8 +144,10 @@ function AgregarProducto(){
                                             <td>{elemento.stocks}</td>
                                             <td>{elemento.description}</td>
                                             <td>
+                                                <div className="OpcionesBtn">
                                                 <button className="btn btn-primary" onClick={()=>chooseProduct(elemento, 'Edit')}><i className='far fa-edit'/><EditIcon/></button> {"   "}
                                                 <button className="btn btn-danger" onClick={()=>chooseProduct(elemento, 'Delete')}><i className='far fa-trash-alt'/><DeleteIcon/></button>
+                                                </div>
                                             </td>
                                         </tr>
                                         ))
@@ -155,7 +157,7 @@ function AgregarProducto(){
 
                             <Modal isOpen={modalEdit}>
                                 <ModalHeader>
-                                <div>
+                                <div className="tituloEditar">
                                     <h3>Editar Producto</h3>
                                 </div>
                                 </ModalHeader>
@@ -232,7 +234,6 @@ function AgregarProducto(){
                                         value={selectedProduct && selectedProduct.description}
                                         onChange={handleChange}
                                         />
-                                        <br />
                                     </div>
                                 </ModalBody>
                                 <ModalFooter>
@@ -342,7 +343,6 @@ function AgregarProducto(){
                                             value={selectedProduct ? selectedProduct.description: ''}
                                             onChange={handleChange}
                                             />
-                                        <br />
                                     </div>
                                 </ModalBody>
                                 <ModalFooter>

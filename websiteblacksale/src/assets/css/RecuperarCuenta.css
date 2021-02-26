@@ -81,6 +81,8 @@
 
 .rightSiteRC .bodyRightSite .bodyL{
     width: 65%;
+    min-height: 60vh;
+    margin-top: 10%;
 }
 
 .rightSiteRC .bodyRightSite .bodyR{
@@ -88,15 +90,16 @@
 }
 
 .rightSiteRC .bodyRightSite .bodyR img{
-    margin-top: 20%;
-    width: 90%;
-    height: 50%;
+    margin-top: 35%;
+    width: 100%;
+    height: 35%;
 }
 
 .rightSiteRC .bodyRightSite .bodyL .form1{
     background-color: white;
     display: flex;
     align-items: center;
+    margin-top: 2%;
 }
 
 .rightSiteRC .bodyRightSite .bodyL .form1 h3{
@@ -121,6 +124,7 @@
     background-color: white;
     display: flex;
     align-items: center;
+    margin-top: 4%;
 }
 
 .rightSiteRC .bodyRightSite .bodyL .form2 h3{
@@ -145,6 +149,7 @@
     background-color: white;
     display: flex;
     align-items: center;
+    margin-top: 4%;
 }
 
 .rightSiteRC .bodyRightSite .bodyL .form3 h3{
@@ -156,7 +161,7 @@
 }
 
 .rightSiteRC .bodyRightSite .bodyL .form3 input{
-    margin-left: 8%;
+    margin-left: 9%;
     background-color: #FFFFFF;
     border: 2px solid #06001B;
     color: #06001B;
@@ -169,6 +174,7 @@
     background-color: white;
     display: flex;
     align-items: center;
+    margin-top: 4%;
 }
 
 .rightSiteRC .bodyRightSite .bodyL .form4 h3{

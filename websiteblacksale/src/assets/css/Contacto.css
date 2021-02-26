@@ -72,11 +72,13 @@
     color: #06001B;
     font-family: Lato;
     font-size: 25px;
+    margin-top: 2%;
 }
 
 
 .ColumnasC{
     display: flex;
+    margin-top: 5%;
 }
 
 .ColumnasC img{
