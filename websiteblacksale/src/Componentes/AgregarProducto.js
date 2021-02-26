@@ -3,9 +3,16 @@ import '../assets/css/AgregarProducto.css';
 import logo from '../assets/images/logo horizontal.png';
 import MayorQue from '@material-ui/icons/ArrowForwardIos';
 import logo2 from '../assets/images/Logo.jpg';
+import EditIcon from '@material-ui/icons/Edit';
+import DeleteIcon from '@material-ui/icons/Delete';
+import AddIcon from '@material-ui/icons/Add';
+import CancelIcon from '@material-ui/icons/Cancel';
+import SaveAltIcon from '@material-ui/icons/SaveAlt';
+import DoneIcon from '@material-ui/icons/Done';
+import ClearIcon from '@material-ui/icons/Clear';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {Modal, ModalBody, ModalHeader, ModalFooter} from 'reactstrap';
-import { Link } from 'react-router-dom';
+import { Done } from '@material-ui/icons';
 
 function AgregarProducto(){
 
@@ -59,11 +66,14 @@ function AgregarProducto(){
                 product.description=selectedProduct.description;
             }
         });
+        localStorage.setItem('products', JSON.stringify(dataNueva))
         setData(dataNueva);
         setModalEdit(false);
     }
 
     const deleted =()=>{
+        const filteredData = data.filter(product=>product.id!==selectedProduct.id);
+        localStorage.setItem('products', JSON.stringify(filteredData))
         setData(data.filter(product=>product.id!==selectedProduct.id));
         setModalDelete(false);
     }
@@ -98,7 +108,7 @@ function AgregarProducto(){
                     <div className="logoC">
                         <img src={logo}></img>
                     </div>                    
-                    <h2>Inicio <MayorQue/> Usuario <MayorQue/> Agregar Producto</h2>
+                    <h2>Inicio <MayorQue/> Usuario <MayorQue/> Agregar/Editar/Eliminar Producto</h2>
                     <div className="logo2C">
                         <img src={logo2}></img>
                     </div>                   
@@ -111,7 +121,7 @@ function AgregarProducto(){
                     <div className="bodyRightSite">
                         <div className="Products">
                             <br/>
-                            <button className="btn btn-success" onClick={()=>abrirModalInsertar()}>Agregar</button>
+                            <button className="btn btn-success" onClick={()=>abrirModalInsertar()}>Agregar Producto <AddIcon/></button>
                             <br/><br/>
                             <table className="table table-responsive">
                                 <thead>
@@ -128,16 +138,14 @@ function AgregarProducto(){
                                     {data.map(elemento=>(
                                         <tr>
                                             <td>{elemento.id}</td>
-                                            <td><Link to={"/products/"+elemento.name} className='disabled'>
-                                            {elemento.name}
-                                            </Link></td>
+                                            <td>{elemento.name}</td>
                                             <td>{elemento.category}</td>
                                             <td>{elemento.price}</td>
                                             <td>{elemento.stocks}</td>
                                             <td>{elemento.description}</td>
                                             <td>
-                                                <button className="btn btn-primary" onClick={()=>chooseProduct(elemento, 'Edit')}><i className='far fa-edit'/>Editar</button> {"   "}
-                                                <button className="btn btn-danger" onClick={()=>chooseProduct(elemento, 'Delete')}><i className='far fa-trash-alt'/>Eliminar</button>
+                                                <button className="btn btn-primary" onClick={()=>chooseProduct(elemento, 'Edit')}><i className='far fa-edit'/><EditIcon/></button> {"   "}
+                                                <button className="btn btn-danger" onClick={()=>chooseProduct(elemento, 'Delete')}><i className='far fa-trash-alt'/><DeleteIcon/></button>
                                             </td>
                                         </tr>
                                         ))
@@ -158,6 +166,7 @@ function AgregarProducto(){
                                         className="form-control"
                                         type="text"
                                         name="name"
+                                        placeholder="Nombre..."
                                         value={selectedProduct && selectedProduct.name}
                                         onChange={handleChange}
                                         />
@@ -167,15 +176,27 @@ function AgregarProducto(){
                                         className="form-control"
                                         type="text"
                                         name="category"
+                                        placeholder="Caballero/Dama/Niño/Temporada"
+                                        list="defaultNumbers"
                                         value={selectedProduct && selectedProduct.category}
                                         onChange={handleChange}
                                         />
+                                        <datalist id="defaultNumbers">
+                                            <option value="Caballero"></option>
+                                            <option value="Dama"></option>
+                                            <option value="Niño"></option>
+                                            <option value="Temporada"></option>
+                                        </datalist>
                                         <br />
                                         <label>Precio del Producto:</label>
                                         <input
                                         className="form-control"
-                                        type="text"
+                                        type="number"
+                                        min="0.00"
+                                        max="10000.00"
+                                        step="0.01"
                                         name="price"
+                                        placeholder="Q12.00"
                                         value={selectedProduct && selectedProduct.price}
                                         onChange={handleChange}
                                         />
@@ -185,6 +206,7 @@ function AgregarProducto(){
                                         className="form-control"
                                         type="text"
                                         name="photo"
+                                        placeholder="/foto1.png"
                                         value={selectedProduct && selectedProduct.photo}
                                         onChange={handleChange}
                                         />
@@ -192,8 +214,11 @@ function AgregarProducto(){
                                         <label>Existencias:</label>
                                         <input
                                         className="form-control"
-                                        type="text"
+                                        type="number"
+                                        min="0"
+                                        max="10000"
                                         name="stocks"
+                                        placeholder="000"
                                         value={selectedProduct && selectedProduct.stocks}
                                         onChange={handleChange}
                                         />
@@ -203,6 +228,7 @@ function AgregarProducto(){
                                         className="form-control"
                                         type="text"
                                         name="description"
+                                        placeholder="Descripción del producto..."
                                         value={selectedProduct && selectedProduct.description}
                                         onChange={handleChange}
                                         />
@@ -211,13 +237,12 @@ function AgregarProducto(){
                                 </ModalBody>
                                 <ModalFooter>
                                     <button className="btn btn-primary" onClick={()=>edit()}>
-                                        Guardar
+                                        Guardar <SaveAltIcon/>
                                     </button>
                                     <button
                                         className="btn btn-danger"
-                                        onClick={()=>setModalEdit(false)}
-                                    >
-                                        Cancelar
+                                        onClick={()=>setModalEdit(false)}>
+                                        Cancelar <CancelIcon/>
                                     </button>
                                 </ModalFooter>
                             </Modal>
@@ -228,13 +253,12 @@ function AgregarProducto(){
                                 </ModalBody>
                                 <ModalFooter>
                                     <button className="btn btn-danger" onClick={()=>deleted()}>
-                                        Si
+                                        Si <DoneIcon/>
                                     </button>
                                     <button
                                         className="btn btn-secondary"
-                                        onClick={()=>setModalDelete(false)}
-                                    >
-                                        No
+                                        onClick={()=>setModalDelete(false)}>
+                                        No <ClearIcon/>
                                     </button>
                                 </ModalFooter>
                             </Modal>
@@ -252,6 +276,7 @@ function AgregarProducto(){
                                             className="form-control"
                                             type="text"
                                             name="name"
+                                            placeholder="Nombre..."
                                             value={selectedProduct ? selectedProduct.name: ''}
                                             onChange={handleChange}
                                             />
@@ -261,15 +286,27 @@ function AgregarProducto(){
                                             className="form-control"
                                             type="text"
                                             name="category"
+                                            placeholder="Caballero/Dama/Niño/Temporada"
+                                            list="defaultNumbers"
                                             value={selectedProduct ? selectedProduct.category: ''}
                                             onChange={handleChange}
                                             />
+                                            <datalist id="defaultNumbers">
+                                                <option value="Caballero"></option>
+                                                <option value="Dama"></option>
+                                                <option value="Niño"></option>
+                                                <option value="Temporada"></option>
+                                            </datalist>
                                         <br />
                                         <label>Precio del Producto:</label>
                                             <input
                                             className="form-control"
-                                            type="text"
+                                            type="number"
+                                            min="0.00"
+                                            max="10000.00"
+                                            step="0.01"
                                             name="price"
+                                            placeholder="Q12.00"
                                             value={selectedProduct ? selectedProduct.price: ''}
                                             onChange={handleChange}
                                             />
@@ -279,6 +316,7 @@ function AgregarProducto(){
                                             className="form-control"
                                             type="text"
                                             name="photo"
+                                            placeholder="/foto1.png"
                                             value={selectedProduct ? selectedProduct.photo: ''}
                                             onChange={handleChange}
                                             />
@@ -286,8 +324,11 @@ function AgregarProducto(){
                                         <label>Existencias:</label>
                                             <input
                                             className="form-control"
-                                            type="text"
+                                            type="number"
+                                            min="0"
+                                            max="10000"
                                             name="stocks"
+                                            placeholder="000"
                                             value={selectedProduct ? selectedProduct.stocks: ''}
                                             onChange={handleChange}
                                             />
@@ -297,6 +338,7 @@ function AgregarProducto(){
                                             className="form-control"
                                             type="text"
                                             name="description"
+                                            placeholder="Descripción del producto..."
                                             value={selectedProduct ? selectedProduct.description: ''}
                                             onChange={handleChange}
                                             />
@@ -306,13 +348,12 @@ function AgregarProducto(){
                                 <ModalFooter>
                                     <button className="btn btn-primary"
                                         onClick={()=>insert()}>
-                                            Insert
+                                        Guardar  <SaveAltIcon/>
                                     </button>
                                     <button
                                         className="btn btn-danger"
-                                        onClick={()=>setModalInsert(false)}
-                                    >
-                                        Cancel
+                                        onClick={()=>setModalInsert(false)}>
+                                        Cancelar <CancelIcon/>
                                     </button>
                                 </ModalFooter>
                             </Modal>

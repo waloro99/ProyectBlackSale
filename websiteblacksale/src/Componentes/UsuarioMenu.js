@@ -30,8 +30,8 @@ function UsuarioMenu(){
                             </div>
                             <div className="derechaM">
                                 <div className="arribaM">
-                                <a href="/actualizarproducto"><button className="actualizar"><h3>&nbsp;&nbsp; Actualizar Producto</h3></button></a>
-                                <a href="/eliminarproducto"><button className="eliminar"><h3>&nbsp;&nbsp; Eliminar Producto</h3></button></a>
+                                <a href="/agregarproducto"><button className="actualizar"><h3>&nbsp;&nbsp; Actualizar Producto</h3></button></a>
+                                <a href="/agregarproducto"><button className="eliminar"><h3>&nbsp;&nbsp; Eliminar Producto</h3></button></a>
                                 </div>
                                 <div className="abajoM">
                                 <a href="/confcuenta"><button className="configurar"><h3>&nbsp;&nbsp;&nbsp;&nbsp; Configuración de Cuenta</h3></button></a>
