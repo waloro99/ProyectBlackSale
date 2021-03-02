@@ -26,23 +26,23 @@ function ConfCuenta(){
                     <div className="bodyL">
                         <div className="form1">
                         <h3>Nombres:</h3>
-                        <input type="text" placeholder="Nombres"></input>
+                        <input type="text" placeholder="Nombres" value="Walter Ulises"></input>
                         </div>
                         <div className="form2">
                         <h3>Apellidos:</h3>
-                        <input type="text" placeholder="Apellidos"></input>
+                        <input type="text" placeholder="Apellidos" value="Orozco Fuentes"></input>
                         </div>
                         <div className="form3">
                         <h3>Correo electrónico:</h3>
-                        <input type="email" placeholder="correo@correo.com" ></input>
+                        <input type="email" placeholder="correo@correo.com" value="walterof1@hotmail.com"></input>
                         </div>
                         <div className="form4">
                         <h3>Contraseña:</h3>
-                        <input type="password" placeholder="************"></input>
+                        <input type="password" placeholder="************" value="paraiso123"></input>
                         </div>
                         <div className="form5">
                         <h3>Rol:</h3>
-                        <input type="text" placeholder="Admin"></input>
+                        <input type="text" placeholder="Admin" value="admin"></input>
                         </div>
                         <br></br>
                         <a href="/"><button type="submit"> Actualizar</button> </a>
