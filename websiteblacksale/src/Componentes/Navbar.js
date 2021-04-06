@@ -16,6 +16,9 @@ function Navbar(){
                     <a href="/Productos">Promociones</a>
                     <a href="/Contacto">Contacto</a>
                 </div>
+                <div className="tituloApp">
+                    <h3>BLACK SALE</h3>
+                </div>               
                 <button onClick={() => setShowLinks(!showLinks)}>
                     <ReorderIcon/>
                 </button>

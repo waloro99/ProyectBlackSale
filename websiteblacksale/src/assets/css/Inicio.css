@@ -95,3 +95,12 @@
 .rightSite .gemelosImg{
     display: flex;
 }
+
+/* DISEÑO PARA APP */
+@media only screen and (max-width: 375px){
+    .main-inicio{
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+    }
+}

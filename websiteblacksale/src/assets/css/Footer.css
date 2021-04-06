@@ -96,3 +96,10 @@ img{
     margin-left: 45%;
     width: 70%;
 }
+
+/* DISEÑO PARA APP */
+@media only screen and (max-width: 375px){
+    .main-footer{
+        display: none;
+    }
+}
