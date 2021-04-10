@@ -103,4 +103,16 @@
         flex-direction: column;
         height: 100vh;
     }
+
+    .content-wrap{
+        display: none;
+    }
+
+    .rightSite .img1{
+        display: none;
+    }
+
+    .rightSite .img2{
+        display: none;
+    }
 }
