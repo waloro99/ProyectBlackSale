@@ -26,7 +26,7 @@ function App() {
       <div className="App">
         <Navbar />
         <Switch>
-          <Route path="/recuperar" exact>
+        <Route path="/recuperar" exact>
             <RecuperarCuenta/>
           </Route>
           <Route path="/agregarproducto" exact>

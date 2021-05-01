@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import '../assets/css/App.css';
 import ReorderIcon from '@material-ui/icons/Reorder';
 import SearchIcon from '@material-ui/icons/Search';
+import { Link } from 'react-router-dom';
 
 function Navbar(){
     /* Es un estado en el que se encuentra para que aparezca el boton cuando la pantalla este menor ancho */
@@ -10,11 +11,11 @@ function Navbar(){
         <div className="Navbar">
             <div className="leftSide">
                 <div className="links" id={showLinks ? "hidden" : ""}> 
-                    <a href="/">Inicio</a>
-                    <a href="/Productos">Productos</a>
-                    <a href="/Productos">Nuevo Ingreso</a>
-                    <a href="/Productos">Promociones</a>
-                    <a href="/Contacto">Contacto</a>
+                    <Link to="/">Inicio</Link>
+                    <Link to="/Productos">Productos</Link>
+                    <Link to="/Productos">Nuevo Ingreso</Link>
+                    <Link to="/Productos">Promociones</Link>
+                    <Link to="/Contacto">Contacto</Link>
                 </div>
                 <div className="tituloApp">
                     <h3>BLACK SALE</h3>
@@ -25,9 +26,9 @@ function Navbar(){
             </div>
             <div className="rightSide">
                 <input type="text" placeholder="Producto que desea..."></input>
-                <a href="/Productos"><button>
+                <Link to="/Productos"><button>
                     <SearchIcon/>
-                </button></a>
+                </button></Link>
             </div>
         </div>
     )

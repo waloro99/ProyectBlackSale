@@ -3,6 +3,7 @@ import '../assets/css/ConfCuenta.css';
 import logo from '../assets/images/logo horizontal.png';
 import MayorQue from '@material-ui/icons/ArrowForwardIos';
 import logo2 from '../assets/images/Logo.jpg';
+import { Link } from 'react-router-dom';
 
 function ConfCuenta(){
     return(
@@ -45,7 +46,7 @@ function ConfCuenta(){
                         <input type="text" placeholder="Admin" value="admin"></input>
                         </div>
                         <br></br>
-                        <a href="/"><button type="submit"> Actualizar</button> </a>
+                        <Link to="/"><button type="submit"> Actualizar</button></Link>
                     </div>
                     </div>          
                 </div>

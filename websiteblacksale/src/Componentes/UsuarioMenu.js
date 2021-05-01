@@ -3,6 +3,7 @@ import '../assets/css/UsuarioMenu.css';
 import MayorQue from '@material-ui/icons/ArrowForwardIos';
 import logo from '../assets/images/logo horizontal.png';
 import logo2 from '../assets/images/Logo.jpg';
+import { Link } from 'react-router-dom';
 
 function UsuarioMenu(){
     return(
@@ -25,16 +26,16 @@ function UsuarioMenu(){
                     <div className="menuM">
                         <div className="cont-menu">
                             <div className="izquierdaM">
-                            <a href="/agregarproducto"><button className="agregar"><h3>&nbsp;&nbsp;&nbsp;&nbsp; Agregar Producto</h3></button></a>
-                            <a href="/modificarusuario"><button className="modificar"><h3>&nbsp;&nbsp;&nbsp;&nbsp; Modificar Usuario</h3></button></a>
+                            <Link to="/agregarproducto"><button className="agregar"><h3>&nbsp;&nbsp;&nbsp;&nbsp; Agregar Producto</h3></button></Link>
+                            <Link to="/modificarusuario"><button className="modificar"><h3>&nbsp;&nbsp;&nbsp;&nbsp; Modificar Usuario</h3></button></Link>
                             </div>
                             <div className="derechaM">
                                 <div className="arribaM">
-                                <a href="/agregarproducto"><button className="actualizar"><h3>&nbsp;&nbsp; Actualizar Producto</h3></button></a>
-                                <a href="/agregarproducto"><button className="eliminar"><h3>&nbsp;&nbsp; Eliminar Producto</h3></button></a>
+                                <Link to="/agregarproducto"><button className="actualizar"><h3>&nbsp;&nbsp; Actualizar Producto</h3></button></Link>
+                                <Link to="/agregarproducto"><button className="eliminar"><h3>&nbsp;&nbsp; Eliminar Producto</h3></button></Link>
                                 </div>
                                 <div className="abajoM">
-                                <a href="/confcuenta"><button className="configurar"><h3>&nbsp;&nbsp;&nbsp;&nbsp; Configuración de Cuenta</h3></button></a>
+                                <Link to="/confcuenta"><button className="configurar"><h3>&nbsp;&nbsp;&nbsp;&nbsp; Configuración de Cuenta</h3></button></Link>
                                 </div>
                             </div>
                         </div>                        

@@ -5,6 +5,7 @@ import MayorQue from '@material-ui/icons/ArrowForwardIos';
 import logo2 from '../assets/images/Logo.jpg';
 import olvido from '../assets/images/se me olvido.jpg';
 import { TextField } from '@material-ui/core';
+import { Link } from 'react-router-dom';
 
 function RecuperarCuenta(){
     return(
@@ -42,7 +43,7 @@ function RecuperarCuenta(){
                         <input type="text" placeholder="Admin / Subadmin / Empleado"></input>
                         </div>
                         <br></br>
-                        <a href="/"><button type="submit"> Enviar</button> </a>
+                        <Link to="/"><button type="submit"> Enviar</button></Link>
                     </div>
                     <div className="bodyR">
                         <img src={olvido}></img>

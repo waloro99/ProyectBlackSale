@@ -6,6 +6,7 @@ import logo from '../assets/images/logo horizontal.png';
 import img1 from '../assets/images/cariño1.jpg';
 import img2 from '../assets/images/cariño 2.jpg';
 import img3 from '../assets/images/cariño 4.jpg';
+import { Link } from 'react-router-dom';
 
 const useStyles=makeStyles((theme)=>({
     modal:{
@@ -68,10 +69,10 @@ function Inicio(){
                 <br/> <br/>
             </div>           
             <div align="center">
-                <Button color="primary" href="/menu" className={styles.button}>Iniciar Sesión</Button>
+                <Button color="primary" className={styles.button}><Link to="/menu">Iniciar Sesión</Link></Button>
             </div>
             <div align="center" className={styles.olvidar}>
-                <a href="/recuperar">¿Olvidaste tu contraseña?</a>
+                <Link to="/recuperar">¿Olvidaste tu contraseña?</Link>
             </div>
         </div>
     )

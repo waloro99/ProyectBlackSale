@@ -2,6 +2,7 @@ import React from 'react';
 import '../assets/css/Footer.css';
 import face from '../assets/images/face.png';
 import insta from '../assets/images/insta.png';
+import { Link } from 'react-router-dom';
 
 function Footer(){
     return(
@@ -30,12 +31,12 @@ function Footer(){
                     <div className="col2"> 
                         <ui className = "list-unstyled2">
                             <div className="leftCol2">
-                                <li><a href="/">Inicio</a></li>
-                                <li><a href="/Productos">Productos</a></li>
+                                <li><Link to="/">Inicio</Link></li>
+                                <li><Link to="/Productos">Productos</Link></li>
                             </div>
                             <div className="rightCol2">
-                                <li><a href="/Productos">Promociones</a></li>
-                                <li><a href="/Productos">Nuevo Ingreso</a></li>
+                                <li><Link to="/Productos">Promociones</Link></li>
+                                <li><Link to="/Productos">Nuevo Ingreso</Link></li>
                             </div>
                         </ui> 
                     </div>
