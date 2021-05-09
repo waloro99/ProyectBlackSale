@@ -1,0 +1,22 @@
+.btnGoogle{
+    background-color: transparent;
+}
+
+.btnGoogle p{
+    color: blue;
+    text-decoration: none;
+}
+
+.btnGoogle button{
+    background-color: transparent;
+    color: blue;
+    font-size: 12px;
+    font-family: Lato;
+    text-align: center;
+}
+
+.btnGoogle button:hover{
+    background-color: blue;
+    color: white;
+}
+

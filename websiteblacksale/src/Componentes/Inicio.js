@@ -6,6 +6,7 @@ import logo from '../assets/images/logo horizontal.png';
 import img1 from '../assets/images/cariño1.jpg';
 import img2 from '../assets/images/cariño 2.jpg';
 import img3 from '../assets/images/cariño 4.jpg';
+import Login from './login';
 import { Link } from 'react-router-dom';
 
 const useStyles=makeStyles((theme)=>({
@@ -26,7 +27,7 @@ const useStyles=makeStyles((theme)=>({
     },
     button:{
         textAlign:'center',
-        backgroundColor: '#06001B',
+        backgroundColor: 'white',
         color: 'white',
         fontSize: '12px',
         fontFamily: 'Lato'
@@ -69,7 +70,8 @@ function Inicio(){
                 <br/> <br/>
             </div>           
             <div align="center">
-                <Button color="primary" className={styles.button}><Link to="/menu">Iniciar Sesión</Link></Button>
+                
+                <Button color="primary" className={styles.button}><Link to="/menu"><Login/></Link></Button>
             </div>
             <div align="center" className={styles.olvidar}>
                 <Link to="/recuperar">¿Olvidaste tu contraseña?</Link>

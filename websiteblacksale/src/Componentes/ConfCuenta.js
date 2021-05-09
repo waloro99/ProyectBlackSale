@@ -4,6 +4,7 @@ import logo from '../assets/images/logo horizontal.png';
 import MayorQue from '@material-ui/icons/ArrowForwardIos';
 import logo2 from '../assets/images/Logo.jpg';
 import { Link } from 'react-router-dom';
+import Login from './login';
 
 function ConfCuenta(){
     return(
@@ -21,7 +22,7 @@ function ConfCuenta(){
                 <div className="rightSiteCC">       
                     <div className="header">
                         <h2>Completa el formulario:</h2>
-                        <h3>Cuenta: admin</h3>
+                        <h3>Cuenta: <Link to="/"><Login/></Link></h3>
                     </div> 
                     <div className="bodyRightSiteCC">
                     <div className="bodyL">
@@ -46,7 +47,7 @@ function ConfCuenta(){
                         <input type="text" placeholder="Admin" value="admin"></input>
                         </div>
                         <br></br>
-                        <Link to="/"><button type="submit"> Actualizar</button></Link>
+                        <button type="submit"> Actualizar</button>
                     </div>
                     </div>          
                 </div>

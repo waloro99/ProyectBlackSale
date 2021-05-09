@@ -4,6 +4,7 @@ import MayorQue from '@material-ui/icons/ArrowForwardIos';
 import logo from '../assets/images/logo horizontal.png';
 import logo2 from '../assets/images/Logo.jpg';
 import { Link } from 'react-router-dom';
+import Login from './login';
 
 function UsuarioMenu(){
     return(
@@ -21,7 +22,7 @@ function UsuarioMenu(){
                 <div className="rightSiteC">
                     <div className="header">
                         <h2>Elige una opción:</h2>
-                        <h3>Cuenta: admin</h3>
+                        <h3>Cuenta: <Link to="/"><Login/></Link></h3>
                     </div>
                     <div className="menuM">
                         <div className="cont-menu">

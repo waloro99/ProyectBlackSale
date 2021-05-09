@@ -10,6 +10,8 @@ import CancelIcon from '@material-ui/icons/Cancel';
 import SaveAltIcon from '@material-ui/icons/SaveAlt';
 import DoneIcon from '@material-ui/icons/Done';
 import ClearIcon from '@material-ui/icons/Clear';
+import Login from './login';
+import { Link } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {Modal, ModalBody, ModalHeader, ModalFooter} from 'reactstrap';
 import { Done } from '@material-ui/icons';
@@ -114,7 +116,7 @@ function ModificarUsuario(){
                 <div className="rightSiteMU">       
                     <div className="header">
                         <h2>Modifica los usuarios:</h2>
-                        <h3>Cuenta: admin</h3>
+                        <h3>Cuenta: <Link to="/"><Login/></Link></h3>
                     </div> 
                     <div className="bodyRightSite">
                         <div className="Products">
