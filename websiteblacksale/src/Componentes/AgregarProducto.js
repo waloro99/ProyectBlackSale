@@ -15,6 +15,7 @@ import { Link } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {Modal, ModalBody, ModalHeader, ModalFooter} from 'reactstrap';
 import { Done } from '@material-ui/icons';
+import axios from "axios";
 
 function AgregarProducto(){
 
