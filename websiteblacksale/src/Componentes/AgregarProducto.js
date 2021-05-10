@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { Component } from 'react';
 import '../assets/css/AgregarProducto.css';
 import logo from '../assets/images/logo horizontal.png';
 import MayorQue from '@material-ui/icons/ArrowForwardIos';
@@ -17,93 +17,98 @@ import {Modal, ModalBody, ModalHeader, ModalFooter} from 'reactstrap';
 import { Done } from '@material-ui/icons';
 import axios from "axios";
 
-function AgregarProducto(){
+const url = 'http://localhost:8010/api/v1/products/';
 
-    const [data, setData] = useState([]);
+class AgregarProducto extends Component {
 
-    useEffect(() => {
-        const readProduct = () => {
-            if (localStorage.getItem('products')) {
-                setData(JSON.parse(localStorage.getItem('products')))
-            }
+    state = {
+        data:[],
+        modalInsert: false,
+        modalDelete: false,
+        form:{
+            _id: '',
+            id: '',
+            name: '',
+            category: '',
+            price: '',
+            photo: '',
+            stocks: '',
+            description: ''
         }
-        readProduct()
-    }, []);
-
-    const [modalEdit, setModalEdit] = useState(false);
-    const [modalDelete, setModalDelete] = useState(false);
-    const [modalInsert, setModalInsert] = useState(false);
-
-    const [selectedProduct, setSelectedProduct] = useState({
-        id: '',
-        name: '',
-        category: '',
-        price: '',
-        photo: '',
-        stocks: '',
-        description: ''
-    });
-
-    const chooseProduct=(elemento, caso)=>{
-        setSelectedProduct(elemento);
-        (caso==='Edit')?setModalEdit(true):setModalDelete(true)
     }
 
-    const handleChange=e=>{
-        const {name, value}=e.target;
-        setSelectedProduct((prevState)=>({
-        ...prevState,
-        [name]: value
-        }));
+    peticionGet=()=>{
+        axios.get(url).then(response=>{
+            this.setState({data: response.data});
+        }).catch(error=>{
+            console.log(error.message);
+        })
     }
 
-    const edit=()=>{
-        var dataNueva=data;
-        dataNueva.map(product=>{
-            if(product.id===selectedProduct.id){
-                product.name=selectedProduct.name;
-                product.category=selectedProduct.category;
-                product.price=selectedProduct.price;
-                product.photo=selectedProduct.photo;
-                product.stocks=selectedProduct.stocks;
-                product.description=selectedProduct.description;
+    peticionPost=async()=>{
+        await axios.post(url,this.state.form).then(response=>{
+            this.modalInsert();
+            this.peticionGet();
+        }).catch(error=>{
+            console.log(error.message);
+        })
+    }
+
+    peticionPut=()=>{
+        axios.put(url+this.state.form._id, this.state.form).then(response=>{
+            this.modalInsert();
+            this.peticionGet();
+        }).catch(error=>{
+            console.log(error.message);
+        })
+    }
+    
+    peticionDelete=()=>{
+        axios.delete(url+this.state.form._id).then(response=>{
+            this.setState({modalDelete: false});
+            this.peticionGet();
+        }).catch(error=>{
+            console.log(error.message);
+        })
+    }
+    modalInsert=()=>{
+        this.setState({modalInsert: !this.state.modalInsert});
+    }
+
+    chooseProduct=(elemento)=>{
+        this.setState({
+            modalType: 'edit',
+            form: {
+                _id: elemento._id,
+                id: elemento.id,
+                name: elemento.name,
+                category: elemento.category,
+                price: elemento.price,
+                photo: elemento.photo,
+                stocks: elemento.stocks,
+                description: elemento.description,
+                modalType: ''
+            }
+        })
+    }
+
+    handleChange=async e=>{
+        e.persist();
+        await this.setState({
+            form:{
+                ...this.state.form,
+                [e.target.name]: e.target.value
             }
         });
-        localStorage.setItem('products', JSON.stringify(dataNueva))
-        setData(dataNueva);
-        setModalEdit(false);
+        console.log(this.state.form);
     }
 
-    const deleted =()=>{
-        const filteredData = data.filter(product=>product.id!==selectedProduct.id);
-        localStorage.setItem('products', JSON.stringify(filteredData))
-        setData(data.filter(product=>product.id!==selectedProduct.id));
-        setModalDelete(false);
+    componentDidMount() {
+        this.peticionGet();
     }
 
-    const abrirModalInsertar=()=>{
-        setSelectedProduct(null);
-        setModalInsert(true);
-    }
-
-    const insert =()=>{
-        var valueInsert=selectedProduct;
-        if (data.length===0) {
-            valueInsert.id=1;
-        }
-        else {
-            valueInsert.id=data[data.length-1].id+1;
-        }
-        
-        var newData = data;
-        newData.push(valueInsert);
-        localStorage.setItem('products', JSON.stringify(newData))
-        setData(newData);
-        setModalInsert(false);
-    }
-
-
-
+    render(){
+        const {form}=this.state;
     return(
         <div className="main-contacto">
             <div className="content-wrap">
@@ -124,7 +129,7 @@ function AgregarProducto(){
                     <div className="bodyRightSite">
                         <div className="Products">
                             <div className="AgregarProducto">
-                            <button className="btn btn-success" onClick={()=>abrirModalInsertar()}>Agregar Producto <AddIcon/></button></div>
+                            <button className="btn btn-success" onClick={()=>{this.setState({form: null, modalType: 'insert'}); this.modalInsert()}}>Agregar Producto <AddIcon/></button></div>
                             <br/>
                             <table className="table table-responsive">
                                 <thead>
@@ -138,7 +143,8 @@ function AgregarProducto(){
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    {data.map(elemento=>(
+                                    {this.state.data.map(elemento => {
+                                        return(
                                         <tr>
                                             <td>{elemento.id}</td>
                                             <td>{elemento.name}</td>
@@ -148,126 +154,34 @@ function AgregarProducto(){
                                             <td>{elemento.description}</td>
                                             <td>
                                                 <div className="OpcionesBtn">
-                                                <button className="btn btn-primary" onClick={()=>chooseProduct(elemento, 'Edit')}><i className='far fa-edit'/><EditIcon/></button> {"   "}
-                                                <button className="btn btn-danger" onClick={()=>chooseProduct(elemento, 'Delete')}><i className='far fa-trash-alt'/><DeleteIcon/></button>
+                                                <button className="btn btn-primary" onClick={() => {this.chooseProduct(elemento); this.modalInsert()}}><i className='far fa-edit'/><EditIcon/></button> {"   "}
+                                                <button className="btn btn-danger" onClick={()=>{this.chooseProduct(elemento); this.setState({modalDelete: true})}}><i className='far fa-trash-alt'/><DeleteIcon/></button>
                                                 </div>
                                             </td>
                                         </tr>
-                                        ))
+                                        )
+                                    })
                                     }
                                 </tbody>
                             </table>
 
-                            <Modal isOpen={modalEdit}>
-                                <ModalHeader>
-                                <div className="tituloEditar">
-                                    <h3>Editar Producto</h3>
-                                </div>
-                                </ModalHeader>
+                            <Modal isOpen={this.state.modalDelete}>
                                 <ModalBody>
-                                    <div className="form-group">
-                                        <label>Nombre del Producto:</label>
-                                        <input
-                                        className="form-control"
-                                        type="text"
-                                        name="name"
-                                        placeholder="Nombre..."
-                                        value={selectedProduct && selectedProduct.name}
-                                        onChange={handleChange}
-                                        />
-                                        <br />
-                                        <label>Categoria del Producto:</label>
-                                        <input
-                                        className="form-control"
-                                        type="text"
-                                        name="category"
-                                        placeholder="Caballero/Dama/Niño/Temporada"
-                                        list="defaultNumbers"
-                                        value={selectedProduct && selectedProduct.category}
-                                        onChange={handleChange}
-                                        />
-                                        <datalist id="defaultNumbers">
-                                            <option value="Caballero"></option>
-                                            <option value="Dama"></option>
-                                            <option value="Niño"></option>
-                                            <option value="Temporada"></option>
-                                        </datalist>
-                                        <br />
-                                        <label>Precio del Producto:</label>
-                                        <input
-                                        className="form-control"
-                                        type="number"
-                                        min="0.00"
-                                        max="10000.00"
-                                        step="0.01"
-                                        name="price"
-                                        placeholder="Q12.00"
-                                        value={selectedProduct && selectedProduct.price}
-                                        onChange={handleChange}
-                                        />
-                                        <br />
-                                        <label>Foto del Producto:</label>
-                                        <input
-                                        className="form-control"
-                                        type="text"
-                                        name="photo"
-                                        placeholder="/foto1.png"
-                                        value={selectedProduct && selectedProduct.photo}
-                                        onChange={handleChange}
-                                        />
-                                        <br />
-                                        <label>Existencias:</label>
-                                        <input
-                                        className="form-control"
-                                        type="number"
-                                        min="0"
-                                        max="10000"
-                                        name="stocks"
-                                        placeholder="000"
-                                        value={selectedProduct && selectedProduct.stocks}
-                                        onChange={handleChange}
-                                        />
-                                        <br />
-                                        <label>Descripción:</label>
-                                        <input
-                                        className="form-control"
-                                        type="text"
-                                        name="description"
-                                        placeholder="Descripción del producto..."
-                                        value={selectedProduct && selectedProduct.description}
-                                        onChange={handleChange}
-                                        />
-                                    </div>
+                                    ¿Estas seguro de eliminar el producto {form && form.name}?
                                 </ModalBody>
                                 <ModalFooter>
-                                    <button className="btn btn-primary" onClick={()=>edit()}>
-                                        Guardar <SaveAltIcon/>
-                                    </button>
-                                    <button
-                                        className="btn btn-danger"
-                                        onClick={()=>setModalEdit(false)}>
-                                        Cancelar <CancelIcon/>
-                                    </button>
-                                </ModalFooter>
-                            </Modal>
-
-                            <Modal isOpen={modalDelete}>
-                                <ModalBody>
-                                    ¿Estas seguro de eliminar el producto {selectedProduct && selectedProduct.name}?
-                                </ModalBody>
-                                <ModalFooter>
-                                    <button className="btn btn-danger" onClick={()=>deleted()}>
+                                    <button className="btn btn-danger" onClick={() => this.peticionDelete()}>
                                         Si <DoneIcon/>
                                     </button>
                                     <button
                                         className="btn btn-secondary"
-                                        onClick={()=>setModalDelete(false)}>
+                                        onClick={() => this.setState({modalDelete: false})}>
                                         No <ClearIcon/>
                                     </button>
                                 </ModalFooter>
                             </Modal>
 
-                            <Modal isOpen={modalInsert}>
+                            <Modal isOpen={this.state.modalInsert}>
                                 <ModalHeader>
                                     <div>
                                         <h3>Nuevo Producto</h3>
@@ -275,14 +189,25 @@ function AgregarProducto(){
                                 </ModalHeader>
                                 <ModalBody>
                                     <div className="form-group">
+                                        <label>ID del Producto:</label>
+                                            <input
+                                            className="form-control"
+                                            type="text"
+                                            name="id"
+                                            readonly="readonly"
+                                            placeholder="id..."
+                                            value={form?form.id: this.state.data.length+1}
+                                            onChange={this.handleChange}
+                                            />
+                                        <br />
                                         <label>Nombre del Producto:</label>
                                             <input
                                             className="form-control"
                                             type="text"
                                             name="name"
                                             placeholder="Nombre..."
-                                            value={selectedProduct ? selectedProduct.name: ''}
-                                            onChange={handleChange}
+                                            value={form?form.name: ''}
+                                            onChange={this.handleChange}
                                             />
                                         <br />
                                         <label>Categoria del Producto:</label>
@@ -292,8 +217,8 @@ function AgregarProducto(){
                                             name="category"
                                             placeholder="Caballero/Dama/Niño/Temporada"
                                             list="defaultNumbers"
-                                            value={selectedProduct ? selectedProduct.category: ''}
-                                            onChange={handleChange}
+                                            value={form?form.category: ''}
+                                            onChange={this.handleChange}
                                             />
                                             <datalist id="defaultNumbers">
                                                 <option value="Caballero"></option>
@@ -305,14 +230,14 @@ function AgregarProducto(){
                                         <label>Precio del Producto:</label>
                                             <input
                                             className="form-control"
-                                            type="number"
+                                            type="text"
                                             min="0.00"
                                             max="10000.00"
                                             step="0.01"
                                             name="price"
                                             placeholder="Q12.00"
-                                            value={selectedProduct ? selectedProduct.price: ''}
-                                            onChange={handleChange}
+                                            value={form?form.price: ''}
+                                            onChange={this.handleChange}
                                             />
                                         <br />
                                         <label>Foto del Producto:</label>
@@ -321,8 +246,8 @@ function AgregarProducto(){
                                             type="text"
                                             name="photo"
                                             placeholder="/foto1.png"
-                                            value={selectedProduct ? selectedProduct.photo: ''}
-                                            onChange={handleChange}
+                                            value={form?form.photo: ''}
+                                            onChange={this.handleChange}
                                             />
                                         <br />
                                         <label>Existencias:</label>
@@ -333,8 +258,8 @@ function AgregarProducto(){
                                             max="10000"
                                             name="stocks"
                                             placeholder="000"
-                                            value={selectedProduct ? selectedProduct.stocks: ''}
-                                            onChange={handleChange}
+                                            value={form?form.stocks: ''}
+                                            onChange={this.handleChange}
                                             />
                                         <br />
                                         <label>Descripcion:</label>
@@ -343,19 +268,25 @@ function AgregarProducto(){
                                             type="text"
                                             name="description"
                                             placeholder="Descripción del producto..."
-                                            value={selectedProduct ? selectedProduct.description: ''}
-                                            onChange={handleChange}
+                                            value={form?form.description: ''}
+                                            onChange={this.handleChange}
                                             />
                                     </div>
                                 </ModalBody>
                                 <ModalFooter>
-                                    <button className="btn btn-primary"
-                                        onClick={()=>insert()}>
-                                        Guardar  <SaveAltIcon/>
-                                    </button>
+                                    {this.state.modalType == 'insert' ?
+                                        <button className="btn btn-primary"
+                                            onClick={()=>this.peticionPost()}>
+                                            Guardar  <SaveAltIcon/>
+                                        </button> :
+                                        <button className="btn btn-primary"
+                                        onClick={()=>this.peticionPut()}>
+                                            Editar  <SaveAltIcon/>
+                                        </button>
+                                    }
                                     <button
                                         className="btn btn-danger"
-                                        onClick={()=>setModalInsert(false)}>
+                                        onClick={() => this.modalInsert()}>
                                         Cancelar <CancelIcon/>
                                     </button>
                                 </ModalFooter>
@@ -365,7 +296,8 @@ function AgregarProducto(){
                 </div>
             </div>
         </div>
-    )
+        )
+    }
 }
 
 
