@@ -34,12 +34,14 @@ class AgregarProducto extends Component {
             photo: '',
             stocks: '',
             description: ''
+            //modalType: ''
         }
     }
 
     peticionGet=()=>{
         axios.get(url).then(response=>{
             this.setState({data: response.data});
+            console.log(response.data);
         }).catch(error=>{
             console.log(error.message);
         })
@@ -49,9 +51,10 @@ class AgregarProducto extends Component {
         await axios.post(url,this.state.form).then(response=>{
             this.modalInsert();
             this.peticionGet();
-        }).catch(error=>{
+            console.log(response.data);
+        })/*.catch(error=>{
             console.log(error.message);
-        })
+        })*/
     }
 
     peticionPut=()=>{
@@ -194,9 +197,9 @@ class AgregarProducto extends Component {
                                             className="form-control"
                                             type="text"
                                             name="id"
-                                            readonly="readonly"
+                                            //readonly="readonly"
                                             placeholder="id..."
-                                            value={form?form.id: this.state.data.length+1}
+                                            value={form?form.id:this.state.data.length+1} //''}
                                             onChange={this.handleChange}
                                             />
                                         <br />
@@ -275,7 +278,7 @@ class AgregarProducto extends Component {
                                 </ModalBody>
                                 <ModalFooter>
                                     {this.state.modalType == 'insert' ?
-                                        <button className="btn btn-primary"
+                                        <button className="btn btn-success"
                                             onClick={()=>this.peticionPost()}>
                                             Guardar  <SaveAltIcon/>
                                         </button> :
