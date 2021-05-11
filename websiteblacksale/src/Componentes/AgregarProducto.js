@@ -17,7 +17,7 @@ import {Modal, ModalBody, ModalHeader, ModalFooter} from 'reactstrap';
 import { Done } from '@material-ui/icons';
 import axios from "axios";
 
-const url = 'http://localhost:8010/api/v1/products/';
+const url = 'http://ec2co-ecsel-1qrx3dencj0gz-2065320774.us-east-2.elb.amazonaws.com:8010/api/v1/products/';
 
 class AgregarProducto extends Component {
 
