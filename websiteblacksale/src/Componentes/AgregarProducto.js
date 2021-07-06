@@ -17,7 +17,7 @@ import {Modal, ModalBody, ModalHeader, ModalFooter} from 'reactstrap';
 import { Done } from '@material-ui/icons';
 import axios from "axios";
 
-const url = 'http://ec2co-ecsel-1qrx3dencj0gz-2065320774.us-east-2.elb.amazonaws.com:8010/api/v1/products/';
+const url = 'http://localhost:3306/api/v1/products/';
 
 class AgregarProducto extends Component {
 
@@ -89,8 +89,8 @@ class AgregarProducto extends Component {
                 price: elemento.price,
                 photo: elemento.photo,
                 stocks: elemento.stocks,
-                description: elemento.description,
-                modalType: ''
+                description: elemento.description
+                //modalType: ''
             }
         })
     }
@@ -149,7 +149,7 @@ class AgregarProducto extends Component {
                                     {this.state.data.map(elemento => {
                                         return(
                                         <tr>
-                                            <td>{elemento.id}</td>
+                                            <td>{elemento._id}</td>
                                             <td>{elemento.name}</td>
                                             <td>{elemento.category}</td>
                                             <td>{elemento.price}</td>
@@ -196,10 +196,10 @@ class AgregarProducto extends Component {
                                             <input
                                             className="form-control"
                                             type="text"
-                                            name="id"
-                                            //readonly="readonly"
+                                            name="_id"
+                                            readonly="readonly"
                                             placeholder="id..."
-                                            value={form?form.id:this.state.data.length+1} //''}
+                                            value={form?form._id:this.state.data.length+1} //''}
                                             onChange={this.handleChange}
                                             />
                                         <br />
