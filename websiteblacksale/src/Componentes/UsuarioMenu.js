@@ -36,7 +36,7 @@ function UsuarioMenu(){
                                 <Link to="/agregarproducto"><button className="eliminar"><h3>&nbsp;&nbsp; Eliminar Producto</h3></button></Link>
                                 </div>
                                 <div className="abajoM">
-                                <Link to="/confcuenta"><button className="configurar"><h3>&nbsp;&nbsp;&nbsp;&nbsp; Configuración de Cuenta</h3></button></Link>
+                                <button className="configurar"><h3>&nbsp;&nbsp;&nbsp;&nbsp; BLACK SALE</h3></button>
                                 </div>
                             </div>
                         </div>                        

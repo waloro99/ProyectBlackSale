@@ -4,10 +4,43 @@ import firebase from 'firebase/app';
 import 'firebase/auth';
 import firebaseConfig from '../firebaseConfig';
 import '../assets/css/Login.css';
+import axios from "axios";
+
 
 const firebaseApp = firebase.initializeApp(firebaseConfig);
+const url = 'http://localhost:3306/api/v1/users/';
 
 class Login extends Component {
+
+    state = {
+        data:[],
+        modalInsert: false,
+        modalDelete: false,
+        form:{
+            _id: '',
+            name: '',
+            lastname: '',
+            email: '',
+            role: '',
+            enabled: '',
+            permissionCreate: '',
+            permissionEdit: '',
+            permissionDelete: ''
+            //modalType: ''
+        }
+    }
+
+    peticionGet=()=>{
+        axios.get(url+this.state.form._id).then(response=>{
+            this.setState({data: response.data});
+            console.log(response.data);
+        }).catch(error=>{
+            console.log(error.message);
+        })
+    }
+
+
+    //Firebase
     render() {
     const {
         user,
@@ -18,7 +51,7 @@ class Login extends Component {
         <div className = "btnGoogle">
             {
             user
-                ? <p>{user.displayName}</p>
+                ? <p>{user.email}</p>
                 : <hr/>
             }
             {
