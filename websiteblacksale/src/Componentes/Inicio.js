@@ -74,7 +74,7 @@ function Inicio(){
                 <Button color="primary" className={styles.button}><Link to="/menu"><Login/></Link></Button>
             </div>
             <div align="center" className={styles.olvidar}>
-                <Link to="/recuperar">¿Olvidaste tu contraseña?</Link>
+                <a href="http://ec2co-ecsel-4fcmumuxsm2f-288099109.us-east-1.elb.amazonaws.com:3000/">Registrarse</a>
             </div>
         </div>
     )
